@@ -49,30 +49,27 @@ body {
 
 /* 2. 全新设计的“清空”按钮样式 */
 #clear-button {
-    /* --- 定位部分 --- */
-    position: absolute;   /* 脱离文档流，自由定位 */
-    top: 50%;             /* 垂直方向的中心线 */
-    right: 20px;          /* 距离右侧边缘 20px */
-    transform: translateY(-50%); /* 向上移动自身高度的50%，实现完美垂直居中 */
-
-    /* --- “圈圈”外观部分 --- */
-    width: 30px;          /* 设置固定宽度 */
-    height: 30px;         /* 设置固定高度 */
-    border-radius: 50%;   /* 关键！变成一个完美的圆形 */
-    border: 1px solid #dcdcdc; 
-    background-color: transparent; 
+    position: absolute;
+    top: 50%;
+    right: 16px;                 /* 手机上稍微往左一点，别贴边 */
+    transform: translateY(-50%);
     
-    /* --- 内部图标居中和样式 --- */
+    /* 强制宽高相等 + 不被压缩 */
+    width: 25px !important;     /* 手机上可以稍微大一点，手感更好 */
+    height: 25px !important;
+    min-width: 25px;             /* 防止被flex压缩 */
+    min-height: 25px;
+    border-radius: 50%;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;      /* 调整垃圾桶图标的大小 */
-    color: #888;          /* 图标颜色 */
     
-    /* --- 交互效果 --- */
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border: 1.5px solid #cccccc;
+    background: rgba(209, 209, 209, 0.156);
 }
+
+
 
 #clear-button:hover {
     background-color: #f5f5f5; /* 鼠标悬停时给一个淡淡的背景色 */
@@ -279,13 +276,6 @@ body {
     overflow: hidden;
 }
 
-/* 如果你想要暗色壁纸自动变深（可选，加上就更高级） */
-@media (prefers-color-scheme: dark) {
-    #app-container {
-        background: rgba(20, 20, 40, 0.65);
-        border: 1px solid rgba(100, 100, 255, 0.3);
-    }
-}
 
 .thinking-dots {
     display: inline-block;
