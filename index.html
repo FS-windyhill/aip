@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Planner FS自用</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: url('wallpaper.jpg') center/cover no-repeat fixed; min-height: 100vh;">
+    <div id="app-container">
+        <header class="app-header">
+            <h1>AI Planner</h1>
+            <p>把你的大任务，拆解成即刻行动的小步骤</p>
+            <button id="clear-button" title="清空聊天记录">×</button>
+        </header>
+        <div id="chat-window">
+            <div id="chat-messages">
+                <!-- 聊天消息会在这里动态添加 -->
+            </div>
+            <div id="loading-indicator" class="hidden">
+                <div class="spinner"></div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            <input type="text" id="task-input" placeholder="输入你想要完成的大任务...">
+            <button id="send-button">发送</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
